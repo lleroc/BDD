@@ -1,155 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistemas de Bases de Datos</title>
-    <link rel="stylesheet" href="styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalización de Bases de Datos</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-      }
-
-      header {
-        background-color: #0074d9;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-      }
-
-      header h1 {
-        margin: 0;
-      }
-
-      main {
-        padding: 20px;
-      }
-
-      section {
-        margin-bottom: 20px;
-      }
-
-      section h2 {
-        color: #0074d9;
-        border-bottom: 2px solid #ccc;
-        padding-bottom: 5px;
-      }
-
-      ul {
-        padding-left: 20px;
-      }
-
-      footer {
-        text-align: center;
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-        margin-top: 20px;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #003d80;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>Sistemas de Bases de Datos</h1>
-      <p>
-        Un enfoque en sus aplicaciones, niveles de abstracción, usuarios,
-        administradores y arquitectura.
-      </p>
+        <h1>Normalización de Bases de Datos</h1>
     </header>
-    <main>
-      <section>
-        <h2>Sistemas de Bases de Datos y sus Aplicaciones</h2>
-        <p>
-          Los sistemas de bases de datos permiten gestionar grandes volúmenes de
-          datos de manera estructurada y eficiente. A diferencia de los sistemas
-          de archivos tradicionales, ofrecen soporte para consultas complejas,
-          múltiples usuarios y mayor seguridad en la gestión de datos críticos
-          (Elmasri & Navathe, 2016). Sus aplicaciones van desde la
-          administración empresarial hasta el desarrollo de sistemas de gestión
-          académica.
-        </p>
-      </section>
-      <section>
-        <h2>Sistemas de Bases de Datos frente a Sistemas de Archivos</h2>
-        <p>
-          Los sistemas de bases de datos superan a los sistemas de archivos al
-          incluir características como integridad de datos, soporte para
-          transacciones y recuperación en caso de fallos. Mientras los sistemas
-          de archivos son adecuados para pequeñas aplicaciones individuales, las
-          bases de datos son esenciales para entornos multiusuario y sistemas
-          complejos (Connolly & Begg, 2015).
-        </p>
-      </section>
-      <section>
-        <h2>Niveles de Abstracción de una Base de Datos</h2>
-        <p>
-          La abstracción en bases de datos consta de tres niveles: físico,
-          lógico y externo. El nivel físico define cómo los datos se almacenan
-          realmente en el hardware, el lógico organiza la estructura conceptual,
-          y el externo permite a los usuarios interactuar con vistas
-          personalizadas de los datos. Esta organización mejora la flexibilidad
-          y la seguridad del sistema (Silberschatz, Korth, & Sudarshan, 2020).
-        </p>
-      </section>
-      <section>
-        <h2>Usuarios y Administradores de la Base de Datos</h2>
-        <p>
-          Los usuarios pueden clasificarse como finales (que interactúan con los
-          datos) y programadores de aplicaciones (que desarrollan software que
-          accede a la base de datos). Los administradores son responsables de la
-          configuración, mantenimiento y seguridad del sistema, asegurando su
-          disponibilidad y rendimiento óptimo (Elmasri & Navathe, 2016).
-        </p>
-      </section>
-      <section>
-        <h2>Arquitectura de los Sistemas de Bases de Datos</h2>
-        <p>
-          La arquitectura de bases de datos se organiza en niveles:
-          cliente-servidor y arquitecturas distribuidas. En un modelo
-          cliente-servidor, los clientes realizan solicitudes que el servidor
-          procesa. Las arquitecturas distribuidas permiten múltiples nodos,
-          mejorando la escalabilidad y redundancia (Connolly & Begg, 2015).
-        </p>
-      </section>
-      <section>
-        <h2>Conclusión</h2>
-        <p>
-          Comprender las diferencias entre sistemas de bases de datos y
-          archivos, sus niveles de abstracción y su arquitectura es fundamental
-          para desarrollar sistemas eficientes y escalables. Estas herramientas
-          no solo simplifican la gestión de datos, sino que también son
-          esenciales para entornos que demandan alta disponibilidad y seguridad
-          en la información.
-        </p>
-      </section>
-      <section>
-        <h2>Bibliografía</h2>
-        <ul>
-          <li>
-            Connolly, T., & Begg, C. (2015).
-            <em
-              >Database Systems: A Practical Approach to Design, Implementation,
-              and Management</em
-            >. Pearson Education.
-          </li>
-          <li>
-            Elmasri, R., & Navathe, S. (2016).
-            <em>Fundamentals of Database Systems</em> (7th ed.). Pearson.
-          </li>
-          <li>
-            Silberschatz, A., Korth, H. F., & Sudarshan, S. (2020).
-            <em>Database System Concepts</em> (7th ed.). McGraw-Hill.
-          </li>
-        </ul>
-      </section>
-    </main>
+    <div class="container">
+        <section>
+            <h2>¿Qué es la normalización?</h2>
+            <p>
+                La normalización de bases de datos es un proceso utilizado para organizar los datos de manera eficiente en una base de datos relacional. 
+                Su objetivo principal es eliminar redundancias, minimizar la duplicación de datos y garantizar la integridad y consistencia de la información.
+            </p>
+        </section>
+
+        <section>
+            <h2>Formas Normales</h2>
+            <h3>Primera Forma Normal (1NF)</h3>
+            <p>
+                Una tabla está en 1NF si:
+            </p>
+            <ul>
+                <li>Todos los valores en las columnas son atómicos (no divisibles).</li>
+                <li>No hay grupos repetitivos o conjuntos de datos múltiples en una sola celda.</li>
+            </ul>
+
+            <h3>Segunda Forma Normal (2NF)</h3>
+            <p>
+                Una tabla está en 2NF si:
+            </p>
+            <ul>
+                <li>Está en 1NF.</li>
+                <li>Todos los atributos no clave dependen completamente de la clave primaria, eliminando dependencias parciales.</li>
+            </ul>
+
+            <h3>Tercera Forma Normal (3NF)</h3>
+            <p>
+                Una tabla está en 3NF si:
+            </p>
+            <ul>
+                <li>Está en 2NF.</li>
+                <li>Todos los atributos no clave dependen únicamente de la clave primaria, eliminando dependencias transitivas.</li>
+            </ul>
+
+            <h3>Forma Normal de Boyce-Codd (BCNF)</h3>
+            <p>
+                Una tabla está en BCNF si:
+            </p>
+            <ul>
+                <li>Está en 3NF.</li>
+                <li>Para cada dependencia funcional A -> B, A es una superclave.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ventajas de la normalización</h2>
+            <ul>
+                <li>Reducción de redundancias.</li>
+                <li>Mayor consistencia de los datos.</li>
+                <li>Facilidad para realizar actualizaciones y mantenimientos.</li>
+                <li>Mejor utilización del espacio de almacenamiento.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Técnicas de normalización</h2>
+            <h3>1. Identificación de dependencias funcionales</h3>
+            <p>
+                Analiza cómo los atributos dependen entre sí dentro de una tabla para detectar dependencias parciales o transitivas.
+            </p>
+
+            <h3>2. Descomposición de tablas</h3>
+            <p>
+                Divide las tablas grandes en tablas más pequeñas para eliminar redundancias y cumplir con las formas normales.
+            </p>
+
+            <h3>3. Uso de claves primarias y claves externas</h3>
+            <p>
+                Establece relaciones entre tablas mediante claves primarias y claves externas para mantener la integridad referencial.
+            </p>
+        </section>
+
+        <section>
+            <h2>Ejemplo práctico</h2>
+            <p>
+                Imagina una tabla de "Ventas" que incluye los campos: Cliente, Producto, Cantidad, Precio, y Dirección del Cliente.
+                Para normalizar esta tabla:
+            </p>
+            <ul>
+                <li>Pasa a 1NF eliminando celdas con valores múltiples, como productos combinados.</li>
+                <li>Pasa a 2NF separando los datos del cliente en una tabla diferente.</li>
+                <li>Pasa a 3NF separando datos como la Dirección del Cliente en una tabla independiente.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Bibliografía</h2>
+            <ul>
+                <li>Elmasri, R., & Navathe, S. (2016). <i>Fundamentals of Database Systems</i>. Pearson.</li>
+                <li>Date, C. J. (2019). <i>An Introduction to Database Systems</i>. Addison-Wesley.</li>
+                <li>Silberschatz, A., Korth, H. F., & Sudarshan, S. (2020). <i>Database System Concepts</i>. McGraw-Hill.</li>
+                <li>Connolly, T., & Begg, C. (2015). <i>Database Systems: A Practical Approach to Design, Implementation, and Management</i>. Pearson.</li>
+            </ul>
+        </section>
+
+        <a href="../index.html" class="button">Regresar</a>
+    </div>
+
     <footer>
-      <p>&copy; Lleroc</p>
+        <p>© 2024 Aprende Normalización. Todos los derechos reservados.</p>
     </footer>
-  </body>
+</body>
 </html>
