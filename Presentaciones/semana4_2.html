@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos de Relaciones entre Entidades en Bases de Datos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      code {
+        display: block;
+        background-color: #f4f4f4;
+        padding: 10px;
+        margin: 10px 0;
+        border-left: 3px solid #2c3e50;
+        color: #34495e;
+      }
+      footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #7f8c8d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tipos de Relaciones entre Entidades en Bases de Datos</h1>
+
+    <p>
+      En este documento se explican los tipos de relaciones entre entidades que
+      se utilizan comúnmente en bases de datos relacionales, con ejemplos
+      prácticos.
+    </p>
+
+    <h2>1. Relación Uno a Uno (1:1)</h2>
+    <p>
+      En esta relación, una entidad A está asociada con una y solo una entidad
+      B, y viceversa.
+    </p>
+    <code>
+      -- Ejemplo en SQL CREATE TABLE personas ( id INT PRIMARY KEY, nombre
+      VARCHAR(100) ); CREATE TABLE pasaportes ( id INT PRIMARY KEY,
+      numero_pasaporte VARCHAR(50), id_persona INT UNIQUE, FOREIGN KEY
+      (id_persona) REFERENCES personas(id) );
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Una persona tiene un único pasaporte, y
+      un pasaporte pertenece a una sola persona.
+    </p>
+
+    <h2>2. Relación Uno a Muchos (1:N)</h2>
+    <p>
+      En esta relación, una entidad A puede estar asociada con múltiples
+      entidades B, pero cada entidad B está asociada con solo una entidad A.
+    </p>
+    <code>
+      -- Ejemplo en SQL CREATE TABLE categorias ( id INT PRIMARY KEY, nombre
+      VARCHAR(100) ); CREATE TABLE productos ( id INT PRIMARY KEY, nombre
+      VARCHAR(100), id_categoria INT, FOREIGN KEY (id_categoria) REFERENCES
+      categorias(id) );
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Una categoría puede tener varios
+      productos, pero cada producto pertenece a una sola categoría.
+    </p>
+
+    <h2>3. Relación Muchos a Muchos (N:M)</h2>
+    <p>
+      En esta relación, múltiples entidades A pueden estar asociadas con
+      múltiples entidades B. Generalmente se implementa con una tabla
+      intermedia.
+    </p>
+    <code>
+      -- Ejemplo en SQL CREATE TABLE estudiantes ( id INT PRIMARY KEY, nombre
+      VARCHAR(100) ); CREATE TABLE cursos ( id INT PRIMARY KEY, nombre
+      VARCHAR(100) ); CREATE TABLE estudiantes_cursos ( id_estudiante INT,
+      id_curso INT, PRIMARY KEY (id_estudiante, id_curso), FOREIGN KEY
+      (id_estudiante) REFERENCES estudiantes(id), FOREIGN KEY (id_curso)
+      REFERENCES cursos(id) );
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Un estudiante puede inscribirse en
+      varios cursos, y un curso puede tener varios estudiantes inscritos.
+    </p>
+
+    <footer>
+      <h2>Bibliografía</h2>
+      <ul>
+        <li>
+          Elmasri, R., & Navathe, S. B. (2015).
+          <em>Fundamentals of Database Systems</em>. Pearson.
+        </li>
+        <li>
+          Date, C. J. (2019). <em>An Introduction to Database Systems</em>.
+          Addison-Wesley.
+        </li>
+        <li>
+          MySQL Documentation.
+          <a href="https://dev.mysql.com/doc/">https://dev.mysql.com/doc/</a>
+        </li>
+        <li>
+          PostgreSQL Documentation.
+          <a href="https://www.postgresql.org/docs/"
+            >https://www.postgresql.org/docs/</a
+          >
+        </li>
+      </ul>
+    </footer>
+    <footer>
+      <p>
+        Creado por Luis Antonio Llerena Ocaña, PhD. | Asignatura: Base de Datos
+      </p>
+    </footer>
+  </body>
+</html>

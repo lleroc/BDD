@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultas en Bases de Datos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      code {
+        display: block;
+        background-color: #f4f4f4;
+        padding: 10px;
+        margin: 10px 0;
+        border-left: 3px solid #2c3e50;
+        color: #34495e;
+      }
+      footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #7f8c8d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Consultas en Bases de Datos</h1>
+
+    <p>
+      En esta presentación se describen las consultas más comunes que puedes
+      realizar en una base de datos, con ejemplos prácticos y una explicación
+      clara de su propósito y uso.
+    </p>
+
+    <h2>1. Consultas de Selección (SELECT)</h2>
+    <p>
+      Permiten recuperar datos de una o más tablas. Son las consultas más
+      utilizadas en bases de datos y sirven para analizar y visualizar la
+      información almacenada.
+    </p>
+    <code>
+      SELECT * FROM empleados; -- Selecciona todos los registros de la tabla
+      empleados SELECT nombre, salario FROM empleados WHERE salario > 5000; --
+      Selecciona empleados con salario mayor a 5000
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Si deseas ver todos los empleados que
+      ganan más de un salario específico, puedes usar SELECT con una cláusula
+      WHERE para filtrar los resultados.
+    </p>
+
+    <h2>2. Consultas de Inserción (INSERT)</h2>
+    <p>
+      Se utilizan para agregar nuevos registros a una tabla. Estas consultas son
+      esenciales para registrar nueva información, como agregar un nuevo cliente
+      o producto.
+    </p>
+    <code>
+      INSERT INTO empleados (nombre, edad, salario) VALUES ('Juan Pérez', 30,
+      4500); -- Inserta un nuevo empleado
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Cuando contratas un nuevo empleado,
+      puedes registrar sus datos en la tabla usando una consulta INSERT.
+    </p>
+
+    <h2>3. Consultas de Actualización (UPDATE)</h2>
+    <p>
+      Sirven para modificar los datos existentes en una tabla. Esto es útil
+      cuando necesitas corregir o actualizar información previamente registrada.
+    </p>
+    <code>
+      UPDATE empleados SET salario = 5000 WHERE nombre = 'Juan Pérez'; --
+      Actualiza el salario de Juan Pérez
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Si decides aumentar el salario de un
+      empleado, puedes hacerlo utilizando una consulta UPDATE.
+    </p>
+
+    <h2>4. Consultas de Eliminación (DELETE)</h2>
+    <p>
+      Se utilizan para eliminar registros de una tabla. Esto es útil para borrar
+      información que ya no es necesaria o que se registró por error.
+    </p>
+    <code>
+      DELETE FROM empleados WHERE nombre = 'Juan Pérez'; -- Elimina a Juan Pérez
+      de la tabla
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Si un empleado deja de trabajar en la
+      empresa, puedes eliminar sus datos utilizando una consulta DELETE.
+    </p>
+
+    <h2>5. Consultas de Agregación</h2>
+    <p>
+      Permiten realizar operaciones matemáticas o estadísticas sobre los datos,
+      como contar registros o calcular promedios.
+    </p>
+    <code>
+      SELECT COUNT(*) AS total_empleados FROM empleados; -- Cuenta el número de
+      empleados SELECT AVG(salario) AS salario_promedio FROM empleados; --
+      Calcula el salario promedio
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Para generar un informe del número
+      total de empleados o el salario promedio en una empresa, puedes usar
+      consultas de agregación.
+    </p>
+
+    <h2>6. Consultas de Joins</h2>
+    <p>
+      Se utilizan para combinar datos de dos o más tablas relacionadas. Son
+      esenciales para trabajar con bases de datos relacionales.
+    </p>
+    <code>
+      SELECT empleados.nombre, departamentos.nombre AS departamento FROM
+      empleados INNER JOIN departamentos ON empleados.id_departamento =
+      departamentos.id; -- Une empleados y departamentos
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Si deseas ver el nombre de cada
+      empleado junto con el departamento al que pertenece, puedes usar un INNER
+      JOIN.
+    </p>
+
+    <h2>7. Consultas de Creación de Tablas (CREATE TABLE)</h2>
+    <p>
+      Permiten definir la estructura de una nueva tabla, incluyendo sus columnas
+      y tipos de datos.
+    </p>
+    <code>
+      CREATE TABLE empleados ( id INT AUTO_INCREMENT PRIMARY KEY, nombre
+      VARCHAR(100), edad INT, salario DECIMAL(10, 2) ); -- Crea la tabla
+      empleados
+    </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Cuando inicias un nuevo proyecto de
+      base de datos, utilizas CREATE TABLE para definir las tablas necesarias.
+    </p>
+
+    <h2>8. Consultas de Eliminación de Tablas (DROP TABLE)</h2>
+    <p>
+      Eliminan por completo una tabla de la base de datos, incluyendo todos sus
+      datos.
+    </p>
+    <code> DROP TABLE empleados; -- Elimina la tabla empleados </code>
+    <p>
+      <strong>Ejemplo práctico:</strong> Si ya no necesitas una tabla en tu base
+      de datos, puedes eliminarla con DROP TABLE.
+    </p>
+
+    <footer>
+      <h2>Bibliografía</h2>
+      <ul>
+        <li>
+          Elmasri, R., & Navathe, S. B. (2015).
+          <em>Fundamentals of Database Systems</em>. Pearson.
+        </li>
+        <li>
+          Date, C. J. (2019). <em>An Introduction to Database Systems</em>.
+          Addison-Wesley.
+        </li>
+        <li>
+          MySQL Documentation.
+          <a href="https://dev.mysql.com/doc/">https://dev.mysql.com/doc/</a>
+        </li>
+        <li>
+          PostgreSQL Documentation.
+          <a href="https://www.postgresql.org/docs/"
+            >https://www.postgresql.org/docs/</a
+          >
+        </li>
+      </ul>
+    </footer>
+    <footer>
+      <p>
+        Creado por Luis Antonio Llerena Ocaña, PhD. | Asignatura: Base de Datos
+      </p>
+    </footer>
+  </body>
+</html>

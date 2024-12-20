@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio de Base de Datos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      header {
+        background: #0056b3;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+      }
+      .container {
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #0056b3;
+      }
+      ul {
+        padding-left: 1.5rem;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem 0;
+        background: #333;
+        color: #fff;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Ejercicio de Base de Datos</h1>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Sistema de Gestión de Hospital</h2>
+        <p>
+          Diseña una base de datos para un sistema de gestión de un hospital que
+          permita organizar la información de pacientes, médicos, tratamientos,
+          citas, medicamentos y facturación. La base de datos debe cumplir con
+          las siguientes especificaciones:
+        </p>
+      </section>
+
+      <section>
+        <h2>Tablas Requeridas</h2>
+        <h3>1. Tabla <code>Pacientes</code></h3>
+        <ul>
+          <li><code>idPaciente</code> (clave primaria)</li>
+          <li><code>nombreCompleto</code></li>
+          <li><code>fechaNacimiento</code></li>
+          <li><code>direccion</code></li>
+          <li><code>telefono</code></li>
+          <li><code>email</code></li>
+        </ul>
+
+        <h3>2. Tabla <code>Medicos</code></h3>
+        <ul>
+          <li><code>idMedico</code> (clave primaria)</li>
+          <li><code>nombreCompleto</code></li>
+          <li><code>especialidad</code></li>
+          <li><code>telefono</code></li>
+          <li><code>email</code></li>
+        </ul>
+
+        <h3>3. Tabla <code>Citas</code></h3>
+        <ul>
+          <li><code>idCita</code> (clave primaria)</li>
+          <li>
+            <code>idPaciente</code> (clave foránea de la tabla
+            <code>Pacientes</code>)
+          </li>
+          <li>
+            <code>idMedico</code> (clave foránea de la tabla
+            <code>Medicos</code>)
+          </li>
+          <li><code>fechaCita</code></li>
+          <li><code>horaCita</code></li>
+          <li><code>motivo</code></li>
+        </ul>
+
+        <h3>4. Tabla <code>Tratamientos</code></h3>
+        <ul>
+          <li><code>idTratamiento</code> (clave primaria)</li>
+          <li>
+            <code>idCita</code> (clave foránea de la tabla <code>Citas</code>)
+          </li>
+          <li><code>descripcion</code></li>
+          <li><code>fechaInicio</code></li>
+          <li><code>fechaFin</code></li>
+        </ul>
+
+        <h3>5. Tabla <code>Medicamentos</code></h3>
+        <ul>
+          <li><code>idMedicamento</code> (clave primaria)</li>
+          <li><code>nombre</code></li>
+          <li><code>descripcion</code></li>
+          <li><code>precioUnidad</code></li>
+        </ul>
+
+        <h3>6. Tabla <code>Recetas</code></h3>
+        <ul>
+          <li><code>idReceta</code> (clave primaria)</li>
+          <li>
+            <code>idTratamiento</code> (clave foránea de la tabla
+            <code>Tratamientos</code>)
+          </li>
+          <li>
+            <code>idMedicamento</code> (clave foránea de la tabla
+            <code>Medicamentos</code>)
+          </li>
+          <li><code>cantidad</code></li>
+          <li><code>dosis</code></li>
+        </ul>
+
+        <h3>7. Tabla <code>Facturas</code></h3>
+        <ul>
+          <li><code>idFactura</code> (clave primaria)</li>
+          <li>
+            <code>idCita</code> (clave foránea de la tabla <code>Citas</code>)
+          </li>
+          <li><code>total</code></li>
+          <li><code>fechaFactura</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Objetivo del Ejercicio</h2>
+        <p>
+          Diseñar las tablas cumpliendo con las especificaciones mencionadas,
+          establecer las claves primarias y foráneas correctamente, normalizar
+          las tablas hasta la tercera forma normal (3FN) y generar consultas SQL
+          para:
+        </p>
+        <ul>
+          <li>
+            Obtener todos los tratamientos de un paciente en un rango de fechas.
+          </li>
+          <li>Listar las citas de un médico específico en una semana.</li>
+          <li>Calcular el total de medicamentos recetados por tratamiento.</li>
+          <li>Generar un reporte de facturación mensual.</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        Creado por Luis Antonio Llerena Ocaña, PhD. | Asignatura: Base de Datos
+      </p>
+    </footer>
+  </body>
+</html>

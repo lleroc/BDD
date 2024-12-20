@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instrucción SELECT en SQL</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+      }
+      code {
+        display: block;
+        background-color: #f4f4f4;
+        padding: 10px;
+        margin: 10px 0;
+        border-left: 3px solid #2c3e50;
+        color: #34495e;
+      }
+      footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #7f8c8d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Instrucción SELECT en SQL</h1>
+
+    <p>
+      La instrucción <code>SELECT</code> en SQL se utiliza para consultar y
+      recuperar datos de una base de datos. Es una de las instrucciones más
+      fundamentales y ampliamente utilizadas en SQL.
+    </p>
+
+    <h2>Sintaxis Básica</h2>
+    <code>
+      SELECT columna1, columna2, ... FROM nombre_tabla WHERE condición;
+    </code>
+    <p>
+      Esta sintaxis permite seleccionar datos específicos de una tabla,
+      aplicando condiciones para filtrar los resultados.
+    </p>
+
+    <h2>Funciones Comunes Utilizadas con SELECT</h2>
+    <p>
+      SQL ofrece una variedad de funciones que se pueden utilizar junto con la
+      instrucción <code>SELECT</code> para realizar operaciones en los datos. A
+      continuación, se presentan algunas de las funciones más comunes:
+    </p>
+
+    <h3>1. Funciones de Agregación</h3>
+    <ul>
+      <li>
+        <strong>COUNT()</strong>: Cuenta el número de filas que cumplen una
+        condición específica.
+      </li>
+      <li>
+        <strong>SUM()</strong>: Calcula la suma total de un campo numérico.
+      </li>
+      <li><strong>AVG()</strong>: Calcula el promedio de un campo numérico.</li>
+      <li><strong>MAX()</strong>: Devuelve el valor máximo de un campo.</li>
+      <li><strong>MIN()</strong>: Devuelve el valor mínimo de un campo.</li>
+    </ul>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+      SELECT COUNT(*) AS total_empleados, AVG(salario) AS salario_promedio,
+      MAX(salario) AS salario_maximo, MIN(salario) AS salario_minimo FROM
+      empleados;
+    </code>
+    <p>Compatible con: SQL Server, MySQL, PostgreSQL, Oracle.</p>
+
+    <h3>2. Funciones de Cadena de Texto</h3>
+    <ul>
+      <li>
+        <strong>UPPER()</strong>: Convierte una cadena de texto a mayúsculas.
+      </li>
+      <li>
+        <strong>LOWER()</strong>: Convierte una cadena de texto a minúsculas.
+      </li>
+      <li>
+        <strong>CONCAT()</strong>: Combina dos o más cadenas de texto (diferente
+        en SQL Server, donde se utiliza <code>+</code>).
+      </li>
+      <li>
+        <strong>SUBSTRING()</strong>: Extrae una subcadena de una cadena de
+        texto (se llama <code>SUBSTR()</code> en Oracle).
+      </li>
+      <li>
+        <strong>TRIM()</strong>: Elimina los espacios en blanco al inicio y al
+        final de una cadena de texto.
+      </li>
+    </ul>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+      SELECT CONCAT(UPPER(apellido), ', ', nombre) AS nombre_completo FROM
+      empleados;
+    </code>
+    <p>
+      Compatible con: MySQL, PostgreSQL, Oracle. En SQL Server, se utiliza
+      <code>+</code> en lugar de <code>CONCAT()</code>.
+    </p>
+
+    <h3>3. Funciones de Fecha y Hora</h3>
+    <ul>
+      <li>
+        <strong>NOW()</strong>: Devuelve la fecha y hora actuales (en SQL Server
+        es <code>GETDATE()</code>).
+      </li>
+      <li>
+        <strong>DATE()</strong>: Extrae la parte de la fecha de un valor de
+        fecha y hora.
+      </li>
+      <li>
+        <strong>YEAR()</strong>, <strong>MONTH()</strong>,
+        <strong>DAY()</strong>: Extraen el año, mes y día de una fecha,
+        respectivamente.
+      </li>
+      <li>
+        <strong>DATEDIFF()</strong>: Calcula la diferencia en días entre dos
+        fechas (en Oracle se usa <code>TO_DATE</code> y resta).
+      </li>
+    </ul>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+      SELECT nombre, fecha_contratacion, DATEDIFF(NOW(), fecha_contratacion) AS
+      dias_en_empresa FROM empleados;
+    </code>
+    <p>
+      Compatible con: MySQL, PostgreSQL, SQL Server, Oracle (con ligeras
+      diferencias).
+    </p>
+
+    <h3>4. Funciones Matemáticas</h3>
+    <ul>
+      <li>
+        <strong>ROUND()</strong>: Redondea un número a un número específico de
+        decimales.
+      </li>
+      <li>
+        <strong>CEIL()</strong>: Redondea un número al siguiente entero más alto
+        (en SQL Server se utiliza <code>CEILING()</code>).
+      </li>
+      <li>
+        <strong>FLOOR()</strong>: Redondea un número al siguiente entero más
+        bajo.
+      </li>
+      <li><strong>ABS()</strong>: Devuelve el valor absoluto de un número.</li>
+    </ul>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+      SELECT nombre, salario, ROUND(salario * 0.10, 2) AS bono FROM empleados;
+    </code>
+    <p>
+      Compatible con: SQL Server, MySQL, PostgreSQL, Oracle (redondeo similar).
+    </p>
+
+    <h2>Diferencias entre Bases de Datos</h2>
+    <ul>
+      <li>
+        <strong>SQL Server:</strong> Usa <code>GETDATE()</code> para la fecha
+        actual y <code>+</code> para concatenación.
+      </li>
+      <li>
+        <strong>MySQL:</strong> Soporta <code>NOW()</code>,
+        <code>CONCAT()</code> y funciones directas de manejo de cadenas.
+      </li>
+      <li>
+        <strong>PostgreSQL:</strong> Ofrece gran flexibilidad con
+        <code>AGE()</code> para cálculos de diferencia de fechas.
+      </li>
+      <li>
+        <strong>Oracle:</strong> Usa <code>TO_DATE</code> y
+        <code>SUBSTR()</code>, y tiene su propio formato de concatenación.
+      </li>
+    </ul>
+
+    <footer>
+      <h2>Bibliografía</h2>
+      <ul>
+        <li>
+          W3Schools. <em>SQL SELECT Statement</em>. Recuperado de
+          <a href="https://www.w3schools.com/sql/sql_select.asp"
+            >https://www.w3schools.com/sql/sql_select.asp</a
+          >
+        </li>
+        <li>
+          PostgreSQL Documentation. Recuperado de
+          <a href="https://www.postgresql.org/docs/"
+            >https://www.postgresql.org/docs/</a
+          >
+        </li>
+        <li>
+          MySQL Documentation. Recuperado de
+          <a href="https://dev.mysql.com/doc/">https://dev.mysql.com/doc/</a>
+        </li>
+        <li>
+          SQL Server Documentation. Recuperado de
+          <a href="https://learn.microsoft.com/en-us/sql/"
+            >https://learn.microsoft.com/en-us/sql/</a
+          >
+        </li>
+        <li>
+          Oracle Database Documentation. Recuperado de
+          <a href="https://docs.oracle.com/en/database/"
+            >https://docs.oracle.com/en/database/</a
+          >
+        </li>
+      </ul>
+    </footer>
+    <footer>
+      <p>
+        Creado por Luis Antonio Llerena Ocaña, PhD. | Asignatura: Base de Datos
+      </p>
+    </footer>
+  </body>
+</html>
