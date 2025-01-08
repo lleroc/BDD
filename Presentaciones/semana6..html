@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones de Agregación en SQL</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .slide {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 900px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      p {
+        line-height: 1.6;
+        color: #34495e;
+      }
+      code {
+        display: block;
+        background-color: #ecf0f1;
+        padding: 10px;
+        margin: 10px 0;
+        border-left: 3px solid #2980b9;
+        color: #34495e;
+        font-family: Consolas, monospace;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #2c3e50;
+        color: white;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Funciones de Agregación en SQL</h1>
+      <p>Explora cómo usar GROUP BY y HAVING para analizar datos agrupados.</p>
+    </header>
+
+    <div class="slide">
+      <h2>¿Qué son las funciones de agregación?</h2>
+      <p>
+        Las funciones de agregación en SQL permiten realizar cálculos
+        matemáticos o estadísticas sobre un conjunto de datos. Estas funciones
+        son esenciales para analizar información en bases de datos.
+      </p>
+      <ul>
+        <li><strong>COUNT:</strong> Cuenta el número de registros.</li>
+        <li><strong>SUM:</strong> Suma los valores de una columna.</li>
+        <li><strong>AVG:</strong> Calcula el promedio de los valores.</li>
+        <li><strong>MIN:</strong> Encuentra el valor mínimo.</li>
+        <li><strong>MAX:</strong> Encuentra el valor máximo.</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Uso de GROUP BY</h2>
+      <p>
+        La cláusula <code>GROUP BY</code> se utiliza para agrupar filas que
+        tienen valores similares en una o más columnas. Es especialmente útil
+        para aplicar funciones de agregación sobre grupos de datos.
+      </p>
+      <code>
+        SELECT departamento, COUNT(*) AS total_empleados FROM empleados GROUP BY
+        departamento;
+      </code>
+      <p>
+        <strong>Ejemplo práctico:</strong> Contar el número de empleados por
+        departamento.
+      </p>
+    </div>
+
+    <div class="slide">
+      <h2>Uso de HAVING</h2>
+      <p>
+        La cláusula <code>HAVING</code> permite filtrar los resultados después
+        de aplicar la agrupación con <code>GROUP BY</code>. Es similar a
+        <code>WHERE</code>, pero se usa con funciones de agregación.
+      </p>
+      <code>
+        SELECT departamento, AVG(salario) AS salario_promedio FROM empleados
+        GROUP BY departamento HAVING AVG(salario) > 5000;
+      </code>
+      <p>
+        <strong>Ejemplo práctico:</strong> Mostrar solo los departamentos con un
+        salario promedio mayor a 5000.
+      </p>
+    </div>
+
+    <div class="slide">
+      <h2>Comparación entre WHERE y HAVING</h2>
+      <p>
+        <strong>WHERE:</strong> Filtra filas antes de aplicar funciones de
+        agregación.<br />
+        <strong>HAVING:</strong> Filtra los resultados después de aplicar las
+        funciones de agregación.
+      </p>
+      <code>
+        -- Usando WHERE SELECT * FROM empleados WHERE salario > 5000; -- Usando
+        HAVING SELECT departamento, AVG(salario) AS salario_promedio FROM
+        empleados GROUP BY departamento HAVING AVG(salario) > 5000;
+      </code>
+    </div>
+
+    <div class="slide">
+      <h2>Beneficios de las funciones de agregación</h2>
+      <ul>
+        <li>
+          Permiten obtener información resumida de grandes conjuntos de datos.
+        </li>
+        <li>Facilitan la creación de informes analíticos.</li>
+        <li>Ayudan a identificar patrones y tendencias en los datos.</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Curso consultas Lenguaje Estructurado de Datos (SQL)</h2>
+      <ul>
+        <li>
+          <a
+            href="https://uniandeseduec-my.sharepoint.com/:f:/g/personal/ua_luisllerena_uniandes_edu_ec/Eu6Ee_UDNWpOneLWOI7vvVkBFRvHLqPK63CuL0Ui8gfEnQ?e=lBqDsI"
+            target="_blank"
+            >Enlace al curso</a
+          >
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <p>
+        Creado por Luis Antonio Llerena Ocaña, PhD. | Asignatura: Base de Datos
+      </p>
+    </footer>
+  </body>
+</html>
