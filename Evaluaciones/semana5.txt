@@ -1,0 +1,10 @@
+﻿MC	¿Cuál de los siguientes comandos pertenece al Lenguaje de Definición de Datos (LDD)?	CREATE TABLE	Correct	INSERT INTO	Incorrect	SELECT	Incorrect
+MC	¿Qué comando de SQL se utiliza para insertar nuevos registros en una tabla?	UPDATE	Incorrect	DELETE	Incorrect	INSERT INTO	Correct
+MC	¿Qué significa el comando SELECT en SQL?	Eliminar registros	Incorrect	Insertar registros	Incorrect	Seleccionar datos de una tabla	Correct
+MC	¿Cuál de las siguientes opciones describe el propósito de la cláusula WHERE?	Agrupar resultados	Incorrect	Filtrar filas que cumplen una condición	Correct	Ordenar los resultados	Incorrect
+MC	¿Qué comando pertenece al Lenguaje de Manipulación de Datos (LMD)?	CREATE TABLE	Incorrect	UPDATE	Correct	DROP TABLE	Incorrect
+MC	¿Cuál de las siguientes consultas SQL selecciona todos los registros de la tabla "productos"?	SELECT * FROM productos;	Correct	SELECT productos FROM *;	Incorrect	SELECT FROM productos *;	Incorrect
+MC	¿Qué consulta SQL selecciona solo los registros donde la columna "precio" es mayor a 100?	SELECT * FROM productos HAVING precio > 100;	Incorrect	SELECT * FROM productos GROUP BY precio > 100;	Incorrect	SELECT * FROM productos WHERE precio > 100;	Correct
+MC	¿Qué comando SQL se utiliza para modificar datos en una tabla?	DELETE	Incorrect	SELECT	Incorrect	UPDATE	Correct
+MC	¿Qué resultado devuelve la consulta SQL `SELECT nombre, edad FROM empleados WHERE edad > 30;`?	Todos los datos de empleados con edad mayor a 30	Incorrect	Solo las columnas nombre y edad de empleados con edad mayor a 30	Correct	Ningún dato	Incorrect
+MC	¿Cuál de los siguientes comandos elimina una tabla de la base de datos?	DELETE	Incorrect	TRUNCATE	Incorrect	DROP TABLE	Correct

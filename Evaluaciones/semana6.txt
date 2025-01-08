@@ -1,0 +1,10 @@
+﻿MC	¿Cuál de las siguientes funciones se utiliza para contar el número de filas en una tabla?	COUNT	Correct	SUM	Incorrect	AVG	Incorrect
+MC	¿Qué cláusula de SQL se utiliza para agrupar filas que tienen los mismos valores en columnas específicas?	ORDER BY	Incorrect	GROUP BY	Correct	HAVING	Incorrect
+MC	¿Qué función calcula el valor promedio de una columna numérica?	MIN	Incorrect	MAX	Incorrect	AVG	Correct
+MC	¿Cuál es el propósito de la cláusula HAVING en SQL?	Filtrar filas antes de agrupar	Incorrect	Ordenar los resultados agrupados	Incorrect	Filtrar grupos después de la agregación	Correct
+MC	Dada la consulta SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento. ¿Qué hace esta consulta?	Calcula el salario promedio por departamento	Incorrect	Cuenta el número de empleados en cada departamento	Correct	Lista todos los empleados en cada departamento	Incorrect
+MC	¿Qué función de SQL usarías para encontrar el salario más alto en una tabla?	AVG	Incorrect	COUNT	Incorrect	MAX	Correct
+MC	En la consulta: `SELECT departamento, AVG(salario) FROM empleados GROUP BY departamento HAVING AVG(salario) > 5000;` ¿Cuál es el propósito de la cláusula HAVING?	Ordenar los departamentos por salario	Incorrect	Filtrar filas antes de agrupar	Incorrect	Mostrar solo los departamentos con un salario promedio mayor a 5000	Correct
+MC	¿Cuál es el orden correcto de ejecución de las cláusulas GROUP BY y HAVING en una consulta?	HAVING, luego GROUP BY	Incorrect	GROUP BY, luego HAVING	Correct	Se ejecutan simultáneamente	Incorrect
+MC	¿Cuál de las siguientes consultas es inválida?	`SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento;`	Incorrect	`SELECT COUNT(*), AVG(salario) FROM empleados;`	Incorrect	`SELECT departamento, COUNT(*) FROM empleados HAVING departamento = 'IT';`	Correct
+MC	Si deseas encontrar el salario total pagado en cada departamento, ¿qué consulta usarías?	`SELECT departamento, MAX(salario) FROM empleados GROUP BY departamento;`	Incorrect	`SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento;`	Incorrect	`SELECT departamento, SUM(salario) FROM empleados GROUP BY departamento;`	Correct
